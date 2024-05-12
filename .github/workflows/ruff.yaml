@@ -1,10 +1,6 @@
 name: Ruff
 
-on:
-  workflow_dispatch:
-  pull_request:
-    types: [opened, reopened, edited, synchronize]
-    branches: [main]
+on: [pull_request, workflow_dispatch]
 
 jobs:
   build:
