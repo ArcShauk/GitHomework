@@ -1,28 +1,55 @@
 """just a dockstring"""
 
 # Zadanie1
-# 5948
-# 4 korovy i 4 byka
-W = 0
-while W <= 5948:
-    W += 1
-print(W, "= SUCCESS!")
+number = "2310"
+enter_number = 0
+count_cows = 0
+count_bulls = 0
+invalid_value = False
+while enter_number != number:
+    enter_number = input("Enter number here: ")
+    for i in enter_number:
+        resul_count = enter_number.count(i)
+        if resul_count >1:
+            print("Number invalid, please, enter number with unique numbers")
+            invalid_value = True
+            break
+    if invalid_value:
+        continue
+    for o in number:
+        current_count_cows = enter_number.count(o)
+        if current_count_cows == 1:
+            count_cows += 1
+    for u in range(4):
+        if number[u] == enter_number[u]:
+            count_bulls += 1
+    print("Bulls = ", count_bulls )
+    print("Cows = ", count_cows - count_bulls)
+    print()
+    count_cows = 0
+    count_bulls = 0
+else: print("You won!")
 
-# zadanie3
+
+#zadanie2 ne vypolnil, ne ponimaju kak
+
+
+
+# #zadanie3
 a = 2, 3, 4, 5, 6, 7, 8
-B = 0
-STAT1 = 2
-STAT2 = 3
-STAT3 = 6
-STAT4 = 8
+b = 0
+stat1 = 2
+stat2 = 3
+stat3 = 6
+stat4 = 8
 for i in a:
-    if i == STAT1:
-        B += 1
-    if i == STAT2:
-        B += 1
-    if i == STAT3:
-        B += 1
-    if i == STAT4:
-        B += 1
-C = int((len(a)))
-print(C - B)
+    if i == stat1:
+        b +=1
+    if i == stat2:
+        b += 1
+    if i == stat3:
+            b += 1
+    if i == stat4:
+        b += 1
+c = int((len(a)))
+print(c - b)
